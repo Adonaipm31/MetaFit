@@ -1,0 +1,131 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(-45deg, #d0ccf1, #b2b1ee, #4b5ae2, #2745ee);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+/* Animación de transición suave */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.192);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 15px;
+    color: #000000;
+    font-size: 12px;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #0000006b;
+    border: none;
+    border-radius: 25px;
+    color: rgb(252, 251, 251);
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #4a3fdb;
+}
+
+.register {
+    margin-top: 15px;
+}
+
+.register a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+.error{
+	color: #f66151;
+	font-weight: bold;
+}
+
+.error_log, .ifdivSuccess{
+	padding: 12px;
+	 background-color: #4a3fdb;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	margin: 20px;
+	border-radius: 5px;
+}
+

@@ -1,0 +1,167 @@
+<!doctype html>
+<html 	xmlns:th="http://www.thymeleaf.org" 
+		lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link th:href="@{css/style.css}" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <header>
+      <div class="menu logo-nav">
+        <a th:href="@{/}" class="logo">METAFIT</a>
+        <label class="menu-icon"><span class="fas fa-bars icomin"></span></label>
+        <nav class="navigation">
+          <ul>
+            <li><a th:href="@{nosotros}">Nosotros</a></li>
+            <li><a th:href="@{productos}">Productos</a></li>
+            <li><a th:href="@{contacto}">Contacto</a></li>
+            <li class="search-icon">
+              <input type="search" placeholder="Search">
+              <label class="icon">
+                <span class="fas fa-search"></span>
+              </label>
+            </li>
+            <li class="car" >
+              <svg class="bi bi-cart3" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+              </svg>
+                <div id="carrito" class="dropdown-menu">
+                  <table id="lista-carrito" class="table">
+                      <thead>
+                          <tr>
+                              <th>Imagen</th>
+                              <th>Nombre</th>
+                              <th>Precio</th>
+                              <th></th>
+                          </tr>
+                      </thead>
+                      <tbody></tbody>
+                  </table>
+
+                  <a href="#" id="vaciar-carrito" class="button-vaciar">Vaciar Carrito</a>
+                  <a href="#" id="procesar-pedido" class="button-pedido">Procesar Compra</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+<main>
+
+        <div class="modal" id="modal">
+          <div class="modal-content">
+            <img src="" alt="" class="modal-img" id="modal-img">
+          </div>
+          <div class="modal-boton" id="modal-boton">X</div>
+        </div>
+
+        <div class="container-productos" id="lista-productos">
+
+          <div class="card">
+            <img th:src="@{image/Producto1.jpg}" class="card-img">
+            <h5>Best Protein 4Lbs</h5>
+            <p>SKU: AT4GY5-IG78I6</p>
+            <p>$/.<small class="precio">70000</small></p>
+            <a href="#" class="button agregar-carrito" data-id="1">Comprar</a>
+          </div>
+          <div class="card">
+            <img th:src="@{image/Producto2.jpg}" class="card-img">
+            <h5>Omega 3 1360mg</h5>
+            <p>SKU: HYF57A-RT96A1</p>
+            <p>$/.<small class="precio">90000</small></p>
+            <a href="#" class="button agregar-carrito" data-id="2">Comprar</a>
+          </div>
+          <div class="card">
+            <img th:src="@{image/Producto3.jpg}" class="card-img">
+            <h5>PX PRO Drink Mix 1000 G</h5>
+            <p>SKU: UHU78C-JH27K9</p>
+            <p>$/.<small class="precio">120000</small></p>
+            <a href="#" class="button agregar-carrito" data-id="3">Comprar</a>
+          </div>
+
+          <div class="card">
+            <img th:src="@{image/Producto4.jpg}" class="card-img">
+            <h5>Proteina Iso 100 5Lbs Hydrolized</h5>
+            <p>SKU: QW7D4Y-CZ59X2</p>
+            <p>$/.<small class="precio">439500
+            </small></p>
+            <a href="#" class="button agregar-carrito" data-id="4">Comprar</a>
+          </div>
+          <div class="card">
+            <img th:src="@{image/Producto5.png}" class="card-img">
+            <h5>Turkesterona 20% (1000 mg) / Potencia máxima y complejada con hidroxipropil-beta-ciclodextrina</h5>
+            <p>SKU: N7T8R3-KJ19D4</p>
+            <p>$/.<small class="precio">460900</small></p>
+            <a href="#" class="button agregar-carrito" data-id="5">Comprar</a>
+          </div>
+          <div class="card">
+            <img th:src="@{image/Producto6.jpg}" class="card-img">
+            <h5>Whey Protein Gold Standard 5Lbs</h5>
+            <p>SKU: HI79D5-A5EV12</p>
+            <p>$/.<small class="precio">329000</small></p>
+            <a href="#" class="button agregar-carrito" data-id="6">Comprar</a>
+          </div>
+
+          <div class="card">
+            <img th:src="@{image/Producto7.jpg}" class="card-img">
+            <h5>Smart Gainer 13 Lb</h5>
+            <p>SKU: GYS7F84-HG62A1</p>
+            <p>$/.<small class="precio">350000</small></p>
+            <a href="#" class="button agregar-carrito" data-id="7">Comprar</a>
+          </div>
+          <div class="card">
+            <img th:src="@{image/Producto8.jpg}" class="card-img">
+            <h5>Hydrotech 908 2Lbs</h5>
+            <p>HY74F5-G5ETY8</p>
+            <p>$/.<small class="precio">43700</small></p>
+            <a href="#" class="button agregar-carrito" data-id="8">Comprar</a>
+          </div>
+          <div class="card">
+            <img th:src="@{image/Producto9.jpg}" class="card-img">
+            <h5>Decadurabolin Gomeisa 200mg</h5>
+            <p>SKU: HY5VF1-XZ3J67</p>
+            <p>$/.<small class="precio">210000</small></p>
+            <a href="#" class="button agregar-carrito" data-id="9">Comprar</a>
+          </div>
+
+        </div>
+</main>
+  
+
+<footer class="footer-section">
+  <div class="copyright-area">
+      <div class="container-footer">
+          <div class="row-footer">
+              <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                  <div class="copyright-text">
+                      <p>Copyright &copy; 2024, todos los derechos reservados <a th:href="@{/}">METAFIT</a></p>
+                  </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                  <div class="footer-menu">
+                      <ul>
+                          <li><a th:href="@{nosotros}">Nosotros</a></li>
+                          <li><a th:href="@{productos}">Productos</a></li>
+                          <li><a th:href="@{contacto}">Contacto</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer> 
+
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script th:src="@{js/scripts.js}"></script>
+    <script th:src="@{js/carrito.js}"></script>
+    <script th:src="@{js/pedido.js}"></script>
+    <script th:src="@{js/compra.js}"></script>
+</body>
+</html>
